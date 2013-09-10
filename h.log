@@ -1,0 +1,604 @@
+loglevel: LOGDATA
+Starting up Haraka version 2.1.6
+[INFO] [-] [core] Loading plugins
+[INFO] [-] [core] Loading plugin: dnsbl
+[INFO] [-] [core] loaded TLD files: 1=310 2=3854 3=161
+[DEBUG] [-] [core] registered hook connect to dnsbl.hook_connect
+[INFO] [-] [core] Loading plugin: data.rfc5322_header_checks
+[DEBUG] [-] [core] registered hook data_post to data.rfc5322_header_checks.hook_data_post
+[INFO] [-] [core] Loading plugin: helo.checks
+[DEBUG] [-] [core] registered hook helo to helo.checks.helo_no_dot
+[DEBUG] [-] [core] registered hook ehlo to helo.checks.helo_no_dot
+[DEBUG] [-] [core] registered hook helo to helo.checks.helo_match_re
+[DEBUG] [-] [core] registered hook ehlo to helo.checks.helo_match_re
+[DEBUG] [-] [core] registered hook helo to helo.checks.helo_raw_ip
+[DEBUG] [-] [core] registered hook ehlo to helo.checks.helo_raw_ip
+[DEBUG] [-] [core] registered hook helo to helo.checks.helo_is_dynamic
+[DEBUG] [-] [core] registered hook ehlo to helo.checks.helo_is_dynamic
+[DEBUG] [-] [core] registered hook helo to helo.checks.helo_big_company
+[DEBUG] [-] [core] registered hook ehlo to helo.checks.helo_big_company
+[DEBUG] [-] [core] registered hook helo to helo.checks.helo_literal_mismatch
+[DEBUG] [-] [core] registered hook ehlo to helo.checks.helo_literal_mismatch
+[INFO] [-] [core] Loading plugin: mail_from.access
+[DEBUG] [-] [core] registered hook mail to mail_from.access.mail_from_access
+[INFO] [-] [core] Loading plugin: max_unrecognized_commands
+[DEBUG] [-] [core] registered hook connect to max_unrecognized_commands.hook_connect
+[DEBUG] [-] [core] registered hook unrecognized_command to max_unrecognized_commands.hook_unrecognized_command
+[INFO] [-] [core] Loading plugin: rcpt_to.access
+[DEBUG] [-] [core] registered hook rcpt to rcpt_to.access.rcpt_to_access
+[INFO] [-] [core] Loading plugin: itemize.v2
+[DEBUG] [-] [core] registered hook rcpt to itemize.v2.hook_rcpt
+[DEBUG] [-] [core] registered hook data to itemize.v2.hook_data
+[DEBUG] [-] [core] registered hook queue to itemize.v2.hook_queue
+[INFO] [-] [core] Loading plugin: rcpt_to.in_host_list
+[DEBUG] [-] [core] registered hook rcpt to rcpt_to.in_host_list.hook_rcpt
+[INFO] [-] [core] Loading plugin: queue/smtp_forward
+[DEBUG] [-] [core] registered hook queue to queue/smtp_forward.hook_queue
+[DEBUG] [-] [core] registered hook queue_outbound to queue/smtp_forward.hook_queue_outbound
+[NOTICE] [-] [core] Listening on :::25
+[DEBUG] [-] [core] [server] running init_master hooks
+[INFO] [-] [core] [outbound] Loading outbound queue from /etc/haraka/queue
+[NOTICE] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] connect ip=209.85.192.181 port=52623 local_ip=:: local_port=25
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running lookup_rdns hooks
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running connect hooks
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running connect hook in dnsbl plugin
+[DEBUG] [-] [dnsbl] looking up: 181.192.85.209.zen.spamhaus.org.
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] hook=connect plugin=dnsbl function=hook_connect params="" retval=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running connect hook in max_unrecognized_commands plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] hook=connect plugin=max_unrecognized_commands function=hook_connect params="" retval=CONT msg=""
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] S: 220 ip-10-0-0-191 ESMTP Haraka 2.1.6 ready
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] C: EHLO mail-pd0-f181.google.com state=1
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running ehlo hooks
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] hook=ehlo plugin=helo.checks function=helo_no_dot params="mail-pd0-f181.google.com" retval=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] hook=ehlo plugin=helo.checks function=helo_match_re params="mail-pd0-f181.google.com" retval=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] hook=ehlo plugin=helo.checks function=helo_raw_ip params="mail-pd0-f181.google.com" retval=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] hook=ehlo plugin=helo.checks function=helo_is_dynamic params="mail-pd0-f181.google.com" retval=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] hook=ehlo plugin=helo.checks function=helo_big_company params="mail-pd0-f181.google.com" retval=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] hook=ehlo plugin=helo.checks function=helo_literal_mismatch params="mail-pd0-f181.google.com" retval=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] running capabilities hooks
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] S: 250-ip-10-0-0-191 Hello mail-pd0-f181.google.com [209.85.192.181], Haraka is at your service.
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] S: 250-PIPELINING
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] S: 250-8BITMIME
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] S: 250 SIZE 0
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0] [core] C: MAIL FROM:<benjamin.shouki@gmail.com> state=1
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running mail hooks
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running mail hook in mail_from.access plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [mail_from.access] checking benjamin.shouki@gmail.com against mail_from.access.whitelist
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [mail_from.access] checking benjamin.shouki@gmail.com against mail_from.access.blacklist
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] hook=mail plugin=mail_from.access function=mail_from_access params="<benjamin.shouki@gmail.com>" retval=CONT msg=""
+[NOTICE] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] sender <benjamin.shouki@gmail.com> code=CONT msg=""
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] S: 250 sender <benjamin.shouki@gmail.com> OK
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: RCPT TO:<shouki@bytemize.com> state=1
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running rcpt hooks
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running rcpt hook in rcpt_to.access plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [rcpt_to.access] checking shouki@bytemize.com against rcpt_to.access.whitelist
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [rcpt_to.access] checking shouki@bytemize.com against rcpt_to.access.blacklist
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] hook=rcpt plugin=rcpt_to.access function=rcpt_to_access params="<shouki@bytemize.com>" retval=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running rcpt hook in itemize.v2 plugin
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] verify user: http://mule.itemize.com:9090/api/v1/accounts/shouki@bytemize.com
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] Got response from server
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] {"originQueue":null,"originModule":null,"guId":"45e3aab9-9f93-4355-8e21-154fa1deb962","status":{"result":true},"result":true,"processedAt":0,"emailDetails":null,"account":{"id":"522e295ce4b0d2f75c6b8b4f","customerId":"shouki","customerName":"BARCLAYS","userId":"shouki","email":"shouki@bytemize.com","firstName":null,"middleName":null,"lastName":null,"title":null,"phone":null,"password":null,"gender":null,"countryCode":null,"emailAccounts":[]}}
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] printed content
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] shouki
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] Verified user1 = 522e295ce4b0d2f75c6b8b4f
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] hook=rcpt plugin=itemize.v2 function=hook_rcpt params="<shouki@bytemize.com>" retval=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running rcpt hook in rcpt_to.in_host_list plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [rcpt_to.in_host_list] Checking if <shouki@bytemize.com> host is in host_lists
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [rcpt_to.in_host_list] checking bytemize.com against ip-10-0-0-191
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [rcpt_to.in_host_list] checking bytemize.com against example.com
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [rcpt_to.in_host_list] checking bytemize.com against bytemize.com
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [rcpt_to.in_host_list] Allowing bytemize.com
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] hook=rcpt plugin=rcpt_to.in_host_list function=hook_rcpt params="<shouki@bytemize.com>" retval=OK msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running rcpt_ok hooks
+[NOTICE] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] recipient <shouki@bytemize.com> code=CONT msg=""
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] S: 250 recipient <shouki@bytemize.com> OK
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: DATA state=1
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running data hooks
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running data hook in itemize.v2 plugin
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] <<<<<<<<<<<<<<<<<<<<<hook data
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] hook=data plugin=itemize.v2 function=hook_data params="" retval=CONT msg=""
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] S: 354 go ahead, make my day
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Received: by mail-pd0-f181.google.com with SMTP id g10so7770134pdj.40\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:         for <shouki@bytemize.com>; Tue, 10 Sep 2013 08:32:06 -0700 (PDT)\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:         d=gmail.com; s=20120113;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:         h=from:to:subject:date:message-id:mime-version:content-type\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:          :thread-index:content-language;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:         bh=7I6O2p2rKxUWiLyyvqPvBj0ZGn6mBB6JMV5QBp2D4fs=;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:         b=h8kI4XQTV13Ulu/cq7d6VrSxPG7oS4SPCmC25PDvTnBHIZrOEzyi1TLwXv81x0reDg\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:          UUK9FzpKegSWlElYjakj+b6WDhsKyAnHNeiQhzrCNmjWfjo57mg21DucbGXlFwsN/4FO\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:          F8l2U2CoZ50Ivn/B3shd8eqoD+dguimt46UcWjoQeqxzBt++xfK0cyL+KJxjdI8yOA9y\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:          U58r+7TUqkjaf/ibT0CRCAKLa9WIIZ7uk7sIrBBsAz6Cr5mg4i+4gZ/q0KvDvESbk5LJ\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:          q3K168HETsVDv30RKflaXcoOYXHaLLLrKNed5/RbfdKW71d1ON0UEN4PHCXwKmAb+XLb\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:          ufDA==\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: X-Received: by 10.66.230.138 with SMTP id sy10mr27371643pac.103.1378827126874;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:         Tue, 10 Sep 2013 08:32:06 -0700 (PDT)\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Return-Path: <benjamin.shouki@gmail.com>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Received: from hplaptop (static-100-2-207-66.nycmny.fios.verizon.net. [100.2.207.66])\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:         by mx.google.com with ESMTPSA id ye1sm25472941pab.19.1969.12.31.16.00.00\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:         (version=TLSv1.2 cipher=RC4-SHA bits=128/128);\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:         Tue, 10 Sep 2013 08:32:05 -0700 (PDT)\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: From: "shoukiu" <benjamin.shouki@gmail.com>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: To: <shouki@bytemize.com>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Subject: subj\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Date: Tue, 10 Sep 2013 11:32:03 -0400\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Message-ID: <044b01ceae3a$e7767780$b6636680$@gmail.com>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: MIME-Version: 1.0\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Type: multipart/mixed;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	boundary="----=_NextPart_000_0450_01CEAE19.60676F90"\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: X-Mailer: Microsoft Outlook 14.0\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: thread-index: Ac6uOs4bu+XiMSzjSqmjDVhT34Zxdw==\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Language: en-us\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: This is a multipart message in MIME format.\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ------=_NextPart_000_0450_01CEAE19.60676F90\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Type: multipart/alternative;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	boundary="----=_NextPart_001_0451_01CEAE19.60676F90"\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ------=_NextPart_001_0451_01CEAE19.60676F90\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Type: text/plain;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	charset="us-ascii"\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Transfer-Encoding: 7bit\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Body      \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ------=_NextPart_001_0451_01CEAE19.60676F90\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Type: text/html;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	charset="us-ascii"\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Transfer-Encoding: quoted-printable\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <html xmlns:v=3D"urn:schemas-microsoft-com:vml" =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: xmlns:o=3D"urn:schemas-microsoft-com:office:office" =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: xmlns:w=3D"urn:schemas-microsoft-com:office:word" =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: xmlns=3D"http://www.w3.org/TR/REC-html40"><head><META =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 14 =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: (filtered medium)"><style><!--\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: /* Font Definitions */\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: @font-face\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{font-family:"Cambria Math";\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	panose-1:2 4 5 3 5 4 6 3 2 4;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: @font-face\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{font-family:Calibri;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	panose-1:2 15 5 2 2 2 4 3 2 4;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: /* Style Definitions */\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: p.MsoNormal, li.MsoNormal, div.MsoNormal\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{margin:0in;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	margin-bottom:.0001pt;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-size:11.0pt;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-family:"Calibri","sans-serif";}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: a:link, span.MsoHyperlink\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-priority:99;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	color:blue;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	text-decoration:underline;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: a:visited, span.MsoHyperlinkFollowed\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-priority:99;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	color:purple;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	text-decoration:underline;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: span.EmailStyle17\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-type:personal-compose;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-family:"Calibri","sans-serif";\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	color:windowtext;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ..MsoChpDefault\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-type:export-only;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-family:"Calibri","sans-serif";}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: @page WordSection1\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{size:8.5in 11.0in;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	margin:1.0in 1.0in 1.0in 1.0in;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: div.WordSection1\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{page:WordSection1;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: --></style><!--[if gte mso 9]><xml>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: </xml><![endif]--><!--[if gte mso 9]><xml>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <o:shapelayout v:ext=3D"edit">\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <o:idmap v:ext=3D"edit" data=3D"1" />\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: </o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: vlink=3Dpurple><div class=3DWordSection1><p =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: class=3DMsoNormal>Body&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <o:p></o:p></p></div></body></html>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ------=_NextPart_001_0451_01CEAE19.60676F90--\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ------=_NextPart_000_0450_01CEAE19.60676F90\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Type: message/rfc822\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Transfer-Encoding: 7bit\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Disposition: attachment\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: From: "Shouki Benjamin" <sbenjamin@itemizecorp.com>\r
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] ------ attachment cb
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] message/rfc822
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] ------ attachment fn
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] 
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] ------ attachment body
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] { header: 
+   { headers: 
+      { 'content-type': [Object],
+        'content-transfer-encoding': [Object],
+        'content-disposition': [Object] },
+     headers_decoded: 
+      { 'content-type': [Object],
+        'content-transfer-encoding': [Object],
+        'content-disposition': [Object] },
+     header_list: 
+      [ 'Content-Type: message/rfc822\n',
+        'Content-Transfer-Encoding: 7bit\n',
+        'Content-Disposition: attachment\n' ],
+     options: undefined },
+  is_html: false,
+  options: { banner: null },
+  bodytext: '',
+  body_text_encoded: '',
+  body_encoding: null,
+  boundary: null,
+  ct: 'message/rfc822',
+  decode_function: [Function],
+  children: [],
+  state: 'start',
+  buf: <Buffer 00 00 00 00 00 00 00 00 38 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10 6e b0 ...>,
+  buf_fill: 0,
+  _events: { attachment_start: [Function] },
+  attachment_stream: 
+   { domain: null,
+     _events: {},
+     _maxListeners: 10,
+     encoding: null,
+     paused: false,
+     end_emitted: false,
+     connection: null,
+     buffer: [] } }
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] ------ afer attachment body
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: To: "Dan Honig" <dhonig@itemizecorp.com>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Cc: "Don Gertler" <dgertler@itemizecorp.com>,\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	"Sean Mccann" <smccann@itemizecorp.com>,\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	"Jeremy Sanders" <jsanders@itemizecorp.com>,\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	"Joel Rosner" <jrosner@itemizecorp.com>,\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	"Benjamin Hardin" <bhardin@itemizecorp.com>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: References: <b6229563d2304795a61aa905a9fa6342@BY2PR06MB203.namprd06.prod.outlook.com>,<1E62A4A7-17F5-4663-9E8B-A52968030746@itemizecorp.com> <4ww909vmo33yplxtkabxft16.1376081050584@email.android.com> <0b27db21ac444f3ba73b02ede556a50f@BY2PR06MB203.namprd06.prod.outlook.com> <c6428430127f436e84ccbb8ba03d91f8@BN1PR06MB022.namprd06.prod.outlook.com> <a6aaefd8f12c4fd6bf9b4d5bd0c6b405@BY2PR06MB203.namprd06.prod.outlook.com> <32017cd806024fd8bc73a19b41a5c61e@BN1PR06MB022.namprd06.prod.outlook.com> <6A7BDF3F-6BE7-4B36-BAB2-BB2C7A6CC01A@itemizecorp.com>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: In-Reply-To: <6A7BDF3F-6BE7-4B36-BAB2-BB2C7A6CC01A@itemizecorp.com>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Subject: RE: FAiling to connect from smtp machine to mongodb.\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Date: Mon, 12 Aug 2013 13:26:57 -0400\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: MIME-Version: 1.0\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Type: multipart/alternative;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	boundary="----=_NextPart_000_044C_01CEAE19.60672170"\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: X-Mailer: Microsoft Outlook 14.0\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: thread-index: Ac6VQFWwzgSbwqOrQ2KNfYxIwuUttAAAHeWdAAAksPgAABIc4AAAKQOAAAAEbVAAAAWG8AAAO+CAAI9avxA=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Language: en-us\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: This is a multipart message in MIME format.\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ------=_NextPart_000_044C_01CEAE19.60672170\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Type: text/plain;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	charset="us-ascii"\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Transfer-Encoding: 7bit\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Dan,\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:  \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:       Is there a REST service (for document storage) available for me to\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: connect?\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:  \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:      If yes, can you share details?\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:  \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:  \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Thanks,\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Shouki\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:  \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:       \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:  \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C:      \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ------=_NextPart_000_044C_01CEAE19.60672170\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Type: text/html;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	charset="us-ascii"\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: Content-Transfer-Encoding: quoted-printable\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <html xmlns:v=3D"urn:schemas-microsoft-com:vml" =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: xmlns:o=3D"urn:schemas-microsoft-com:office:office" =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: xmlns:w=3D"urn:schemas-microsoft-com:office:word" =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: xmlns=3D"http://www.w3.org/TR/REC-html40"><head>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: charset=3Dus-ascii">\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <meta name=3DGenerator content=3D"Microsoft Word 14 (filtered =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: medium)"><base href=3D"x-msg://80/"><style><!--\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: /* Font Definitions */\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: @font-face\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{font-family:"Cambria Math";\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	panose-1:2 4 5 3 5 4 6 3 2 4;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: @font-face\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{font-family:Calibri;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	panose-1:2 15 5 2 2 2 4 3 2 4;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: @font-face\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{font-family:Tahoma;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	panose-1:2 11 6 4 3 5 4 4 2 4;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: /* Style Definitions */\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: p.MsoNormal, li.MsoNormal, div.MsoNormal\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{margin:0in;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	margin-bottom:.0001pt;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-size:12.0pt;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-family:"Times New Roman","serif";}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: a:link, span.MsoHyperlink\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-priority:99;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	color:blue;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	text-decoration:underline;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: a:visited, span.MsoHyperlinkFollowed\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-priority:99;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	color:purple;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	text-decoration:underline;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: p.MsoAcetate, li.MsoAcetate, div.MsoAcetate\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-priority:99;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	mso-style-link:"Balloon Text Char";\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	margin:0in;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	margin-bottom:.0001pt;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-size:8.0pt;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-family:"Tahoma","sans-serif";}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: span.apple-converted-space\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-name:apple-converted-space;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: span.BalloonTextChar\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-name:"Balloon Text Char";\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	mso-style-priority:99;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	mso-style-link:"Balloon Text";\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-family:"Tahoma","sans-serif";}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: span.EmailStyle20\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-type:personal-reply;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-family:"Calibri","sans-serif";\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	color:#1F497D;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ..MsoChpDefault\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{mso-style-type:export-only;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	font-size:10.0pt;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: @page WordSection1\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{size:8.5in 11.0in;\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	margin:1.0in 1.0in 1.0in 1.0in;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: div.WordSection1\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: 	{page:WordSection1;}\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: --></style><!--[if gte mso 9]><xml>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: </xml><![endif]--><!--[if gte mso 9]><xml>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <o:shapelayout v:ext=3D"edit">\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: <o:idmap v:ext=3D"edit" data=3D"1" />\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: </o:shapelayout></xml><![endif]--></head><body lang=3DEN-US link=3Dblue =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: vlink=3Dpurple><div class=3DWordSection1><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'>Dan,<o:p></o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Is there a REST service (for document =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: storage) available for me to connect?<o:p></o:p></span></p><p =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'>&nbsp;&nbsp;&nbsp;&nbsp; If yes, can you share =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: details?<o:p></o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'>Thanks,<o:p></o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'>Shouki<o:p></o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></span></p><p =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal><span =\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: style=3D'font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497=\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: D'>&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></span></p></div></body></html>\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ------=_NextPart_000_044C_01CEAE19.60672170--\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: ------=_NextPart_000_0450_01CEAE19.60676F90--\r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: \r
+[DATA] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: .\r
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running data_post hooks
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running data_post hook in data.rfc5322_header_checks plugin
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] hook=data_post plugin=data.rfc5322_header_checks function=hook_data_post params="" retval=CONT msg=""
+[NOTICE] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] message mid="<044b01ceae3a$e7767780$b6636680$@gmail.com>" size=10115 rcpts=1/0/0 delay=0.001 code=CONT msg=""
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running queue hooks
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running queue hook in itemize.v2 plugin
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] <<<<<<<<hook queue<<<<<<<<<<>>>>>>>>>>>>>>
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] 2
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] part=0
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] { bodytext: '\n',
+  headers: { 'content-type': [ 'multipart/alternative;\n boundary="----=_NextPart_001_0451_01CEAE19.60676F90"' ] },
+  bodyencoding: 'UTF-8',
+  is_html: false,
+  state: 'end',
+  children: 
+   [ { bodytext: 'Body      \n\n\n',
+       headers: [Object],
+       bodyencoding: 'us-ascii',
+       is_html: false,
+       state: 'body' },
+     { bodytext: '<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii"><meta name=Generator content="Microsoft Word 14 (filtered medium)"><style><!--\n/* Font Definitions */\n@font-face\n\t{font-family:"Cambria Math";\n\tpanose-1:2 4 5 3 5 4 6 3 2 4;}\n@font-face\n\t{font-family:Calibri;\n\tpanose-1:2 15 5 2 2 2 4 3 2 4;}\n/* Style Definitions */\np.MsoNormal, li.MsoNormal, div.MsoNormal\n\t{margin:0in;\n\tmargin-bottom:.0001pt;\n\tfont-size:11.0pt;\n\tfont-family:"Calibri","sans-serif";}\na:link, span.MsoHyperlink\n\t{mso-style-priority:99;\n\tcolor:blue;\n\ttext-decoration:underline;}\na:visited, span.MsoHyperlinkFollowed\n\t{mso-style-priority:99;\n\tcolor:purple;\n\ttext-decoration:underline;}\nspan.EmailStyle17\n\t{mso-style-type:personal-compose;\n\tfont-family:"Calibri","sans-serif";\n\tcolor:windowtext;}\n.MsoChpDefault\n\t{mso-style-type:export-only;\n\tfont-family:"Calibri","sans-serif";}\n@page WordSection1\n\t{size:8.5in 11.0in;\n\tmargin:1.0in 1.0in 1.0in 1.0in;}\ndiv.WordSection1\n\t{page:WordSection1;}\n--></style><!--[if gte mso 9]><xml>\n<o:shapedefaults v:ext="edit" spidmax="1026" />\n</xml><![endif]--><!--[if gte mso 9]><xml>\n<o:shapelayout v:ext="edit">\n<o:idmap v:ext="edit" data="1" />\n</o:shapelayout></xml><![endif]--></head><body lang=EN-US link=blue vlink=purple><div class=WordSection1><p class=MsoNormal>Body&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></p></div></body></html>\n',
+       headers: [Object],
+       bodyencoding: 'us-ascii',
+       is_html: true,
+       state: 'body' } ] }
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] part=0  [object Object]
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] part=0  end
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] [ 'multipart/alternative;\n boundary="----=_NextPart_001_0451_01CEAE19.60676F90"' ]
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] [ 'multipart/alternative',
+  index: 0,
+  input: 'multipart/alternative;\n boundary="----=_NextPart_001_0451_01CEAE19.60676F90"' ]
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] 2
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] chil : j = 0 body
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] html flag = false
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] chil : j = 1 body
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] html flag = true
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] part=1
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] { bodytext: '',
+  headers: 
+   { 'content-type': [ 'message/rfc822' ],
+     'content-transfer-encoding': [ '7bit' ],
+     'content-disposition': [ 'attachment' ] },
+  bodyencoding: null,
+  is_html: false,
+  state: 'attachment' }
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] part=1  [object Object]
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] part=1  attachment
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] [ 'message/rfc822' ]
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] attachment files
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] 0
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] before async numsteps =1
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] waiting
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] Got tempfile: /tmp/tmp-3248f5yb4gg.tmp (12)
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] <<<<<<<<<<<<<<<<<<<<<Getting attachment
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] Got attachment: message/rfc822,  for user id: user
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] after create write stream
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] cb waiting
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] [ 1 ]
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] []
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] ???????????????????????????
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] { headers: 
+   { received: 
+      [ 'from mail-pd0-f181.google.com (mail-pd0-f181.google.com [209.85.192.181])\n\tby ip-10-0-0-191 (Haraka/2.1.6) with ESMTP id 729D4408-8566-4E03-B16E-F8114CFFD7F0.1\n\tenvelope-from <benjamin.shouki@gmail.com>;\n\tTue, 10 Sep 2013 15:33:04 +0000\n',
+        'by mail-pd0-f181.google.com with SMTP id g10so7770134pdj.40\n        for <shouki@bytemize.com>; Tue, 10 Sep 2013 08:32:06 -0700 (PDT)\n',
+        'from hplaptop (static-100-2-207-66.nycmny.fios.verizon.net. [100.2.207.66])\n        by mx.google.com with ESMTPSA id ye1sm25472941pab.19.1969.12.31.16.00.00\n        (version=TLSv1.2 cipher=RC4-SHA bits=128/128);\n        Tue, 10 Sep 2013 08:32:05 -0700 (PDT)\n' ],
+     'dkim-signature': [ 'v=1; a=rsa-sha256; c=relaxed/relaxed;\n        d=gmail.com; s=20120113;\n        h=from:to:subject:date:message-id:mime-version:content-type\n         :thread-index:content-language;\n        bh=7I6O2p2rKxUWiLyyvqPvBj0ZGn6mBB6JMV5QBp2D4fs=;\n        b=h8kI4XQTV13Ulu/cq7d6VrSxPG7oS4SPCmC25PDvTnBHIZrOEzyi1TLwXv81x0reDg\n         UUK9FzpKegSWlElYjakj+b6WDhsKyAnHNeiQhzrCNmjWfjo57mg21DucbGXlFwsN/4FO\n         F8l2U2CoZ50Ivn/B3shd8eqoD+dguimt46UcWjoQeqxzBt++xfK0cyL+KJxjdI8yOA9y\n         U58r+7TUqkjaf/ibT0CRCAKLa9WIIZ7uk7sIrBBsAz6Cr5mg4i+4gZ/q0KvDvESbk5LJ\n         q3K168HETsVDv30RKflaXcoOYXHaLLLrKNed5/RbfdKW71d1ON0UEN4PHCXwKmAb+XLb\n         ufDA==\n' ],
+     'x-received': [ 'by 10.66.230.138 with SMTP id sy10mr27371643pac.103.1378827126874;\n        Tue, 10 Sep 2013 08:32:06 -0700 (PDT)\n' ],
+     'return-path': [ '<benjamin.shouki@gmail.com>\n' ],
+     from: [ '"shoukiu" <benjamin.shouki@gmail.com>\n' ],
+     to: [ '<shouki@bytemize.com>\n' ],
+     subject: [ 'subj\n' ],
+     date: [ 'Tue, 10 Sep 2013 11:32:03 -0400\n' ],
+     'message-id': [ '<044b01ceae3a$e7767780$b6636680$@gmail.com>\n' ],
+     'mime-version': [ '1.0\n' ],
+     'content-type': [ 'multipart/mixed;\n\tboundary="----=_NextPart_000_0450_01CEAE19.60676F90"\n' ],
+     'x-mailer': [ 'Microsoft Outlook 14.0\n' ],
+     'thread-index': [ 'Ac6uOs4bu+XiMSzjSqmjDVhT34Zxdw==\n' ],
+     'content-language': [ 'en-us\n' ] },
+  headers_decoded: 
+   { received: 
+      [ 'from mail-pd0-f181.google.com (mail-pd0-f181.google.com [209.85.192.181])\n by ip-10-0-0-191 (Haraka/2.1.6) with ESMTP id 729D4408-8566-4E03-B16E-F8114CFFD7F0.1\n envelope-from <benjamin.shouki@gmail.com>;\n Tue, 10 Sep 2013 15:33:04 +0000',
+        'by mail-pd0-f181.google.com with SMTP id g10so7770134pdj.40\n for <shouki@bytemize.com>; Tue, 10 Sep 2013 08:32:06 -0700 (PDT)',
+        'from hplaptop (static-100-2-207-66.nycmny.fios.verizon.net. [100.2.207.66])\n by mx.google.com with ESMTPSA id ye1sm25472941pab.19.1969.12.31.16.00.00\n (version=TLSv1.2 cipher=RC4-SHA bits=128/128);\n Tue, 10 Sep 2013 08:32:05 -0700 (PDT)' ],
+     'dkim-signature': [ 'v=1; a=rsa-sha256; c=relaxed/relaxed;\n d=gmail.com; s=20120113;\n h=from:to:subject:date:message-id:mime-version:content-type\n :thread-index:content-language;\n bh=7I6O2p2rKxUWiLyyvqPvBj0ZGn6mBB6JMV5QBp2D4fs=;\n b=h8kI4XQTV13Ulu/cq7d6VrSxPG7oS4SPCmC25PDvTnBHIZrOEzyi1TLwXv81x0reDg\n UUK9FzpKegSWlElYjakj+b6WDhsKyAnHNeiQhzrCNmjWfjo57mg21DucbGXlFwsN/4FO\n F8l2U2CoZ50Ivn/B3shd8eqoD+dguimt46UcWjoQeqxzBt++xfK0cyL+KJxjdI8yOA9y\n U58r+7TUqkjaf/ibT0CRCAKLa9WIIZ7uk7sIrBBsAz6Cr5mg4i+4gZ/q0KvDvESbk5LJ\n q3K168HETsVDv30RKflaXcoOYXHaLLLrKNed5/RbfdKW71d1ON0UEN4PHCXwKmAb+XLb\n ufDA==' ],
+     'x-received': [ 'by 10.66.230.138 with SMTP id sy10mr27371643pac.103.1378827126874;\n Tue, 10 Sep 2013 08:32:06 -0700 (PDT)' ],
+     'return-path': [ '<benjamin.shouki@gmail.com>' ],
+     from: [ '"shoukiu" <benjamin.shouki@gmail.com>' ],
+     to: [ '<shouki@bytemize.com>' ],
+     subject: [ 'subj' ],
+     date: [ 'Tue, 10 Sep 2013 11:32:03 -0400' ],
+     'message-id': [ '<044b01ceae3a$e7767780$b6636680$@gmail.com>' ],
+     'mime-version': [ '1.0' ],
+     'content-type': [ 'multipart/mixed;\n boundary="----=_NextPart_000_0450_01CEAE19.60676F90"' ],
+     'x-mailer': [ 'Microsoft Outlook 14.0' ],
+     'thread-index': [ 'Ac6uOs4bu+XiMSzjSqmjDVhT34Zxdw==' ],
+     'content-language': [ 'en-us' ] },
+  header_list: 
+   [ 'Received: from mail-pd0-f181.google.com (mail-pd0-f181.google.com [209.85.192.181])\n\tby ip-10-0-0-191 (Haraka/2.1.6) with ESMTP id 729D4408-8566-4E03-B16E-F8114CFFD7F0.1\n\tenvelope-from <benjamin.shouki@gmail.com>;\n\tTue, 10 Sep 2013 15:33:04 +0000\n',
+     'Received: by mail-pd0-f181.google.com with SMTP id g10so7770134pdj.40\n        for <shouki@bytemize.com>; Tue, 10 Sep 2013 08:32:06 -0700 (PDT)\n',
+     'DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;\n        d=gmail.com; s=20120113;\n        h=from:to:subject:date:message-id:mime-version:content-type\n         :thread-index:content-language;\n        bh=7I6O2p2rKxUWiLyyvqPvBj0ZGn6mBB6JMV5QBp2D4fs=;\n        b=h8kI4XQTV13Ulu/cq7d6VrSxPG7oS4SPCmC25PDvTnBHIZrOEzyi1TLwXv81x0reDg\n         UUK9FzpKegSWlElYjakj+b6WDhsKyAnHNeiQhzrCNmjWfjo57mg21DucbGXlFwsN/4FO\n         F8l2U2CoZ50Ivn/B3shd8eqoD+dguimt46UcWjoQeqxzBt++xfK0cyL+KJxjdI8yOA9y\n         U58r+7TUqkjaf/ibT0CRCAKLa9WIIZ7uk7sIrBBsAz6Cr5mg4i+4gZ/q0KvDvESbk5LJ\n         q3K168HETsVDv30RKflaXcoOYXHaLLLrKNed5/RbfdKW71d1ON0UEN4PHCXwKmAb+XLb\n         ufDA==\n',
+     'X-Received: by 10.66.230.138 with SMTP id sy10mr27371643pac.103.1378827126874;\n        Tue, 10 Sep 2013 08:32:06 -0700 (PDT)\n',
+     'Return-Path: <benjamin.shouki@gmail.com>\n',
+     'Received: from hplaptop (static-100-2-207-66.nycmny.fios.verizon.net. [100.2.207.66])\n        by mx.google.com with ESMTPSA id ye1sm25472941pab.19.1969.12.31.16.00.00\n        (version=TLSv1.2 cipher=RC4-SHA bits=128/128);\n        Tue, 10 Sep 2013 08:32:05 -0700 (PDT)\n',
+     'From: "shoukiu" <benjamin.shouki@gmail.com>\n',
+     'To: <shouki@bytemize.com>\n',
+     'Subject: subj\n',
+     'Date: Tue, 10 Sep 2013 11:32:03 -0400\n',
+     'Message-ID: <044b01ceae3a$e7767780$b6636680$@gmail.com>\n',
+     'MIME-Version: 1.0\n',
+     'Content-Type: multipart/mixed;\n\tboundary="----=_NextPart_000_0450_01CEAE19.60676F90"\n',
+     'X-Mailer: Microsoft Outlook 14.0\n',
+     'thread-index: Ac6uOs4bu+XiMSzjSqmjDVhT34Zxdw==\n',
+     'Content-Language: en-us\n' ],
+  options: undefined }
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] counter = 0
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] envelop url = http://mule.itemize.com:9090/api/v1/accounts/522e295ce4b0d2f75c6b8b4f/envelopes
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] {"customerId":"BARCLAYS","sentDate":1378827187002,"receivedDate":1378827187002,"from":"\"shoukiu\" <benjamin.shouki@gmail.com>","to":"shouki@bytemize.com","subject":"subj","htmlBody":"<html xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" xmlns:m=\"http://schemas.microsoft.com/office/2004/12/omml\" xmlns=\"http://www.w3.org/TR/REC-html40\"><head><META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=us-ascii\"><meta name=Generator content=\"Microsoft Word 14 (filtered medium)\"><style><!--\n/* Font Definitions */\n@font-face\n\t{font-family:\"Cambria Math\";\n\tpanose-1:2 4 5 3 5 4 6 3 2 4;}\n@font-face\n\t{font-family:Calibri;\n\tpanose-1:2 15 5 2 2 2 4 3 2 4;}\n/* Style Definitions */\np.MsoNormal, li.MsoNormal, div.MsoNormal\n\t{margin:0in;\n\tmargin-bottom:.0001pt;\n\tfont-size:11.0pt;\n\tfont-family:\"Calibri\",\"sans-serif\";}\na:link, span.MsoHyperlink\n\t{mso-style-priority:99;\n\tcolor:blue;\n\ttext-decoration:underline;}\na:visited, span.MsoHyperlinkFollowed\n\t{mso-style-priority:99;\n\tcolor:purple;\n\ttext-decoration:underline;}\nspan.EmailStyle17\n\t{mso-style-type:personal-compose;\n\tfont-family:\"Calibri\",\"sans-serif\";\n\tcolor:windowtext;}\n.MsoChpDefault\n\t{mso-style-type:export-only;\n\tfont-family:\"Calibri\",\"sans-serif\";}\n@page WordSection1\n\t{size:8.5in 11.0in;\n\tmargin:1.0in 1.0in 1.0in 1.0in;}\ndiv.WordSection1\n\t{page:WordSection1;}\n--></style><!--[if gte mso 9]><xml>\n<o:shapedefaults v:ext=\"edit\" spidmax=\"1026\" />\n</xml><![endif]--><!--[if gte mso 9]><xml>\n<o:shapelayout v:ext=\"edit\">\n<o:idmap v:ext=\"edit\" data=\"1\" />\n</o:shapelayout></xml><![endif]--></head><body lang=EN-US link=blue vlink=purple><div class=WordSection1><p class=MsoNormal>Body&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></p></div></body></html>\n"}
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] SUCCESS post envelop
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] 2d0df596-b5d7-4732-9b3c-0671bafa064b
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] {"originQueue":null,"originModule":null,"guId":"6b158eda-f65e-49c1-9453-52475f3f3de5","status":{"result":true},"result":true,"processedAt":0,"emailDetails":null,"envelope":{"id":"2d0df596-b5d7-4732-9b3c-0671bafa064b","customerId":"BARCLAYS","accountId":null,"userId":"522e295ce4b0d2f75c6b8b4f","type":"EMAIL","to":"shouki@bytemize.com","from":"\"shoukiu\" <benjamin.shouki@gmail.com>","subject":"subj","textBody":null,"htmlBody":"<html xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" xmlns:m=\"http://schemas.microsoft.com/office/2004/12/omml\" xmlns=\"http://www.w3.org/TR/REC-html40\"><head><META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=us-ascii\"><meta name=Generator content=\"Microsoft Word 14 (filtered medium)\"><style><!--\n/* Font Definitions */\n@font-face\n\t{font-family:\"Cambria Math\";\n\tpanose-1:2 4 5 3 5 4 6 3 2 4;}\n@font-face\n\t{font-family:Calibri;\n\tpanose-1:2 15 5 2 2 2 4 3 2 4;}\n/* Style Definitions */\np.MsoNormal, li.MsoNormal, div.MsoNormal\n\t{margin:0in;\n\tmargin-bottom:.0001pt;\n\tfont-size:11.0pt;\n\tfont-family:\"Calibri\",\"sans-serif\";}\na:link, span.MsoHyperlink\n\t{mso-style-priority:99;\n\tcolor:blue;\n\ttext-decoration:underline;}\na:visited, span.MsoHyperlinkFollowed\n\t{mso-style-priority:99;\n\tcolor:purple;\n\ttext-decoration:underline;}\nspan.EmailStyle17\n\t{mso-style-type:personal-compose;\n\tfont-family:\"Calibri\",\"sans-serif\";\n\tcolor:windowtext;}\n.MsoChpDefault\n\t{mso-style-type:export-only;\n\tfont-family:\"Calibri\",\"sans-serif\";}\n@page WordSection1\n\t{size:8.5in 11.0in;\n\tmargin:1.0in 1.0in 1.0in 1.0in;}\ndiv.WordSection1\n\t{page:WordSection1;}\n--></style><!--[if gte mso 9]><xml>\n<o:shapedefaults v:ext=\"edit\" spidmax=\"1026\" />\n</xml><![endif]--><!--[if gte mso 9]><xml>\n<o:shapelayout v:ext=\"edit\">\n<o:idmap v:ext=\"edit\" data=\"1\" />\n</o:shapelayout></xml><![endif]--></head><body lang=EN-US link=blue vlink=purple><div class=WordSection1><p class=MsoNormal>Body&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <o:p></o:p></p></div></body></html>\n","statusCode":null,"description":null,"sentDate":1378827187002,"processedDate":null,"receivedDate":1378827187002,"docs":[],"docIds":[]}}
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] after parssing results 
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] <<<<<<<<<<<<<CALLBACK>>>>
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] { '0': '0' }
+[INFO] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] hook=queue plugin=itemize.v2 function=hook_queue params="" retval=OK msg="Queued OK"
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running queue_ok hooks
+[NOTICE] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] queue code=CONT msg="Queued OK"
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] S: 250 Queued OK
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running reset_transaction hooks
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] C: QUIT state=1
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running quit hooks
+[PROTOCOL] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] S: 221 ip-10-0-0-191 closing connection. Have a jolly good day.
+[DEBUG] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] running disconnect hooks
+[NOTICE] [729D4408-8566-4E03-B16E-F8114CFFD7F0.1] [core] disconnect ip=209.85.192.181 rdns="mail-pd0-f181.google.com" helo="mail-pd0-f181.google.com" relay=N early=N esmtp=Y tls=N pipe=N txns=1 rcpts=1/0/0 msgs=1/0/0 bytes=10115 lr="" time=2.819
+[NOTICE] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] connect ip=209.85.223.179 port=41225 local_ip=:: local_port=25
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running lookup_rdns hooks
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running connect hooks
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running connect hook in dnsbl plugin
+[DEBUG] [-] [dnsbl] looking up: 179.223.85.209.zen.spamhaus.org.
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] hook=connect plugin=dnsbl function=hook_connect params="" retval=CONT msg=""
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running connect hook in max_unrecognized_commands plugin
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] hook=connect plugin=max_unrecognized_commands function=hook_connect params="" retval=CONT msg=""
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] S: 220 ip-10-0-0-191 ESMTP Haraka 2.1.6 ready
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] C: EHLO mail-ie0-f179.google.com state=1
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running ehlo hooks
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] hook=ehlo plugin=helo.checks function=helo_no_dot params="mail-ie0-f179.google.com" retval=CONT msg=""
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] hook=ehlo plugin=helo.checks function=helo_match_re params="mail-ie0-f179.google.com" retval=CONT msg=""
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] hook=ehlo plugin=helo.checks function=helo_raw_ip params="mail-ie0-f179.google.com" retval=CONT msg=""
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] hook=ehlo plugin=helo.checks function=helo_is_dynamic params="mail-ie0-f179.google.com" retval=CONT msg=""
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] hook=ehlo plugin=helo.checks function=helo_big_company params="mail-ie0-f179.google.com" retval=CONT msg=""
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running ehlo hook in helo.checks plugin
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] hook=ehlo plugin=helo.checks function=helo_literal_mismatch params="mail-ie0-f179.google.com" retval=CONT msg=""
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] running capabilities hooks
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] S: 250-ip-10-0-0-191 Hello mail-ie0-f179.google.com [209.85.223.179], Haraka is at your service.
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] S: 250-PIPELINING
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] S: 250-8BITMIME
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] S: 250 SIZE 0
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A] [core] C: MAIL FROM:<herqueles3@gmail.com> state=1
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] running mail hooks
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] running mail hook in mail_from.access plugin
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [mail_from.access] checking herqueles3@gmail.com against mail_from.access.whitelist
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [mail_from.access] checking herqueles3@gmail.com against mail_from.access.blacklist
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] hook=mail plugin=mail_from.access function=mail_from_access params="<herqueles3@gmail.com>" retval=CONT msg=""
+[NOTICE] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] sender <herqueles3@gmail.com> code=CONT msg=""
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] S: 250 sender <herqueles3@gmail.com> OK
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] C: RCPT TO:<dhonig@bytemize.com> state=1
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] running rcpt hooks
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] running rcpt hook in rcpt_to.access plugin
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [rcpt_to.access] checking dhonig@bytemize.com against rcpt_to.access.whitelist
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [rcpt_to.access] checking dhonig@bytemize.com against rcpt_to.access.blacklist
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] hook=rcpt plugin=rcpt_to.access function=rcpt_to_access params="<dhonig@bytemize.com>" retval=CONT msg=""
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] running rcpt hook in itemize.v2 plugin
+[INFO] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] verify user: http://mule.itemize.com:9090/api/v1/accounts/dhonig@bytemize.com
+[INFO] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] USER NOT VALID : 404
+[INFO] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] hook=rcpt plugin=itemize.v2 function=hook_rcpt params="<dhonig@bytemize.com>" retval=DENYSOFT msg="USER NOT VALID404"
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] running deny hooks
+[NOTICE] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] recipient <dhonig@bytemize.com> code=DENYSOFT msg="USER NOT VALID404"
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] S: 450 USER NOT VALID404
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] C: QUIT state=1
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] running quit hooks
+[PROTOCOL] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] S: 221 ip-10-0-0-191 closing connection. Have a jolly good day.
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] running reset_transaction hooks
+[DEBUG] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] running disconnect hooks
+[NOTICE] [0AFB4EDA-8E87-4328-A360-8B9643598C1A.1] [core] disconnect ip=209.85.223.179 rdns="mail-ie0-f179.google.com" helo="mail-ie0-f179.google.com" relay=N early=N esmtp=Y tls=N pipe=N txns=1 rcpts=0/1/0 msgs=0/0/0 bytes=0 lr="450 USER NOT VALID404" time=0.278
