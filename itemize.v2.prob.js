@@ -21,7 +21,12 @@ exports.hook_rcpt = function (next, connection) {
 exports.hook_data = function (next, connection) {
     connection.loginfo("<<<<<<<<<<<<<<<<<<<<<hook data");
     connection.transaction.parse_body = 1;
+    connection.transaction.notes.attachment_queue_length = 0;
     connection.transaction.attachment_hooks( function (ct, fn, body, stream) {
+	    stream.connection = connection; // Allow backpressure
+    	    stream.pause();
+    	    connection.transaction.notes.attachment_queue_length++;
+
     	    connection.loginfo("------ attachment cb");
     	    tmp.file(function (err, path, fd) {
         	connection.loginfo("Got tempfile: " + path + " (" + fd + ")");
@@ -31,24 +36,35 @@ exports.hook_data = function (next, connection) {
     next();
 }
 
+exports.hook_data_post = function (next, connection) {
+    if (connection.transaction.notes.attachment_queue_length > 0) {
+        connection.transaction.notes.currently_writing_cb = next;
+    }
+    else {
+        next();
+    }
+}
+
 function start_att (connection, ct, fn, body, stream, path, fd) {
     connection.loginfo("<<<<<<<<<<<<<<<<<<<<<Getting attachment");
     connection.loginfo("Got attachment: " + ct + ", " + fn + " for user id: " + "user");
     counter++;
-    stream.connection = connection; // Allow backpressure
-    stream.pause();
 
         var ws = fs.createWriteStream(path);
         stream.pipe(ws);
         stream.resume();
         connection.loginfo("after create write stream");
 		
-        stream.on('end', function ( ) {
-//        ws.on('close', function ( ) {
+        ws.on('close', function ( ) {
 //        ws.on('end', function ( ) {
             connection.loginfo("End of stream reached");
             fs.fstat(fd, function (err, stats) {
                 connection.loginfo("Got data of length: " + stats.size);
+                connection.transaction.notes.attachment_queue_length--;
+                if (connection.transaction.notes.currently_writing_cb) {
+                    connection.transaction.notes.currently_writing_cb();
+                }
+                
     		counter--;
             });
         });
